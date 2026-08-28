@@ -351,6 +351,32 @@ h1 {
   max-height: 85vh;
 }
 
+.schedule-card--export {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.schedule-card--export .schedule-grid {
+  grid-template-columns: 100px repeat(5, minmax(180px, 1fr));
+  width: 100%;
+  max-height: none;
+  overflow: visible;
+}
+
+.schedule-card--export .grid-cell.grid-head,
+.schedule-card--export .grid-cell.grid-time {
+  position: static;
+}
+
+.schedule-card--export .course-card__actions {
+  display: none;
+}
+
 .grid-cell {
   min-height: 120px;
   padding: 10px;
@@ -865,6 +891,15 @@ h1 {
   }
 
   .schedule-grid {
+    grid-template-columns: 9% repeat(5, 18.2%);
+    width: 100%;
+    max-height: none;
+    overflow: visible;
     page-break-inside: avoid;
+  }
+
+  .grid-cell.grid-head,
+  .grid-cell.grid-time {
+    position: static;
   }
 }

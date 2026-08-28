@@ -2,837 +2,837 @@ const SEMESTER_DATA = {
   "2026-2.json": {
     "semester": "2026-2",
     "courses": [
-      {
-        "number": 1,
-        "code": "DCC831",
-        "name": "TECC: Aprendizado Profundo para Processamento de Linguagem Natural",
-        "className": "PG1",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-17:00/18:40",
-        "teacher": "Prof. Adriano Veloso",
-        "room": "DCC 2009",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-pg1-1",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUI",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 2,
-        "code": "DCC831",
-        "name": "TECC: Engenharia de Software Experimental",
-        "className": "PG2",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-17:00/18:40",
-        "teacher": "Prof. Eduardo Figueiredo",
-        "room": "DCC 2009",
-        "startDate": "03/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-pg2-2",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUA",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 3,
-        "code": "DCC831",
-        "name": "TECC: Engenharia de Software para Sistemas Inteligentes",
-        "className": "PG3",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-14:55/16:35",
-        "teacher": "Prof. João Eduardo",
-        "room": "DCC 2013",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-pg3-3",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUA",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 4,
-        "code": "DCC831",
-        "name": "TECC: Seminários Avançados em Processamento de Linguagem Natural e Computação Social",
-        "className": "PG4",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-14:55/16:35",
-        "teacher": "Prof. Jussara",
-        "room": "DCC 2015",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-pg4-4",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUA",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 5,
-        "code": "DCC831",
-        "name": "TECC: Inteligência Artificial: Caracterização e Medição",
-        "className": "PG5",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-14:55/16:35",
-        "teacher": "Prof. Wagner",
-        "room": "DCC 2013",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-pg5-5",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUI",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 6,
-        "code": "DCC831",
-        "name": "TECC: Bancos de Dados Geográficos e Ciência de Dados Geoespaciais",
-        "className": "PG6",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-13:00/14:40",
-        "teacher": "Prof. Clodoveu",
-        "room": "CAD 3-A406",
-        "startDate": "04/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-pg6-6",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "13:00",
-            "end": "14:40"
-          },
-          {
-            "day": "QUI",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      },
-      {
-        "number": 7,
-        "code": "DCC831",
-        "name": "TECC: Teste de Software",
-        "className": "PG7",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-19:00/20:40",
-        "teacher": "Prof. André Hora",
-        "room": "CAD 3-A312",
-        "startDate": "04/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-pg7-7",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "19:00",
-            "end": "20:40"
-          },
-          {
-            "day": "QUI",
-            "start": "19:00",
-            "end": "20:40"
-          }
-        ]
-      },
-      {
-        "number": 8,
-        "code": "DCC831",
-        "name": "TECC: Otimização Linear Robusta",
-        "className": "PG8",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-13:00/14:40",
-        "teacher": "Prof. Márcio Costa",
-        "room": "CAD 3-A211",
-        "startDate": "11/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-pg8-8",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "13:00",
-            "end": "14:40"
-          },
-          {
-            "day": "QUI",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      },
-      {
-        "number": 9,
-        "code": "DCC831",
-        "name": "TECC: Grandes Modelos de Linguagem",
-        "className": "PG9",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-14:55/16:35",
-        "teacher": "Prof. Anisio",
-        "room": "CAD 3-A313",
-        "startDate": "10/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-pg9-9",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUA",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 10,
-        "code": "DCC831",
-        "name": "TECC: Theory and Practice of SMT Solving",
-        "className": "P12",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-17:00/18:40",
-        "teacher": "Prof. Haniel",
-        "room": "CAD 3-A211",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-p12-10",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUA",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 11,
-        "code": "DCC831",
-        "name": "TECC: Criptografia-teoria e aplicações",
-        "className": "P13",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-19:00/20:40",
-        "teacher": "Prof. Jeroen",
-        "room": "CAD 3-A211",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Inglês",
-        "id": "dcc831-p13-11",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "19:00",
-            "end": "20:40"
-          },
-          {
-            "day": "QUA",
-            "start": "19:00",
-            "end": "20:40"
-          }
-        ]
-      },
-      {
-        "number": 12,
-        "code": "DCC831",
-        "name": "TECC: IA Generativa para Música",
-        "className": "P14",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-17:00/18:40",
-        "teacher": "Prof. Lucas Ferreira",
-        "room": "CAD 3-A313",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p14-12",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUI",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 13,
-        "code": "DCC831",
-        "name": "TECC: Aprendizado por Reforço",
-        "className": "P15",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-17:00/18:40",
-        "teacher": "Prof. Luiz Chaimowicz",
-        "room": "CAD 3-A213",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p15-13",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUI",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 14,
-        "code": "DCC831",
-        "name": "TES: Manutenção e Evolução de Software",
-        "className": "P16",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-17:00/18:40",
-        "teacher": "Prof. Marco Túlio",
-        "room": "CAD 3-A212",
-        "startDate": null,
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-p16-14",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUA",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 15,
-        "code": "DCC831",
-        "name": "TECC: Sistemas Operacionais Avançados",
-        "className": "P17",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-14:55/16:35",
-        "teacher": "Prof. Marcos Augusto Menezes",
-        "room": "CAD 3-Aud. B 3001",
-        "startDate": "11/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-p17-15",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUI",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 16,
-        "code": "DCC831",
-        "name": "TECC: Quantitative Information Flow",
-        "className": "P18",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-14:55/16:35",
-        "teacher": "Prof. Mário Sérgio",
-        "room": "CAD 3-A310",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Inglês",
-        "id": "dcc831-p18-16",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUA",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 17,
-        "code": "DCC831",
-        "name": "TECC: Nanocomputação e Nanotecnologia Computacional",
-        "className": "P19",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-17:00/18:40",
-        "teacher": "Prof. Omar",
-        "room": "CAD 3-A410",
-        "startDate": "03/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p19-17",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUA",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 18,
-        "code": "DCC831",
-        "name": "TECC: Cibersegurança",
-        "className": "P20",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-19:00/20:40",
-        "teacher": "Prof. Michele Nogueira",
-        "room": "ICEX 2013",
-        "startDate": "04/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p20-18",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "19:00",
-            "end": "20:40"
-          },
-          {
-            "day": "QUI",
-            "start": "19:00",
-            "end": "20:40"
-          }
-        ]
-      },
-      {
-        "number": 19,
-        "code": "DCC831",
-        "name": "TECC: Computação Natural",
-        "className": "P21",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-17:00/18:40",
-        "teacher": "Prof. Gisele",
-        "room": "CAD 3-A312",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p21-19",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "17:00",
-            "end": "18:40"
-          },
-          {
-            "day": "QUI",
-            "start": "17:00",
-            "end": "18:40"
-          }
-        ]
-      },
-      {
-        "number": 20,
-        "code": "DCC831",
-        "name": "TECC: Heuristicas e Metaheurísticas",
-        "className": "P22",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-14:55/16:35",
-        "teacher": "Prof. Thiago Noronha",
-        "room": "CAD 3-A312",
-        "startDate": "11/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-p22-20",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUI",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 21,
-        "code": "DCC831",
-        "name": "TECC: Programação e Arquitetura de Computadores Paralelos",
-        "className": "P23",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "2a e 4a-14:55/16:35",
-        "teacher": "Prof. George",
-        "room": "CAD 3-A406",
-        "startDate": "10/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc831-p23-21",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUA",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 22,
-        "code": "DCC831",
-        "name": "TECC: Teoria dos Grafos",
-        "className": "P24",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-13:00/14:40",
-        "teacher": "Prof. Gabriel Coutinho",
-        "room": "CAD 3-A311",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p24-22",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "13:00",
-            "end": "14:40"
-          },
-          {
-            "day": "QUI",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      },
-      {
-        "number": 23,
-        "code": "DCC831",
-        "name": "TECC: Projeto de Sistemas Robóticos",
-        "className": "P25",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-19:00/20:40",
-        "teacher": "Prof. Paulo Rezeck",
-        "room": "CAD 3-A410",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc831-p25-23",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "19:00",
-            "end": "20:40"
-          },
-          {
-            "day": "QUI",
-            "start": "19:00",
-            "end": "20:40"
-          }
-        ]
-      },
-      {
-        "number": 24,
-        "code": "DCC850",
-        "name": "TECC: Seminários Avançados de Pós-Graduação I",
-        "className": "PG1",
-        "workload": 15,
-        "credits": 1,
-        "type": "OB",
-        "scheduleText": "6a-10:00/12:40",
-        "teacher": "Prof. Pedro",
-        "room": "2077",
-        "startDate": "05/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc850-pg1-24",
-        "meetings": [
-          {
-            "day": "SEX",
-            "start": "10:00",
-            "end": "12:40"
-          }
-        ]
-      },
-      {
-        "number": 25,
-        "code": "DCC850",
-        "name": "TECC: Seminários Avançados de Pós-Graduação II",
-        "className": "PG2",
-        "workload": 15,
-        "credits": 1,
-        "type": "OB",
-        "scheduleText": "6a-10:00/12:40",
-        "teacher": "Prof. Fabrício",
-        "room": "2077",
-        "startDate": "05/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc850-pg2-25",
-        "meetings": [
-          {
-            "day": "SEX",
-            "start": "10:00",
-            "end": "12:40"
-          }
-        ]
-      },
-      {
-        "number": 26,
-        "code": "DCC851",
-        "name": "TECC: Modelos Generativos para Imagens",
-        "className": "PG1",
-        "workload": 30,
-        "credits": 2,
-        "type": "OP",
-        "scheduleText": "3a e 5a-14:55/16:35",
-        "teacher": "Prof. Erickson",
-        "room": "DCC 2014",
-        "startDate": "11/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc851-pg1-26",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "14:55",
-            "end": "16:35"
-          },
-          {
-            "day": "QUI",
-            "start": "14:55",
-            "end": "16:35"
-          }
-        ]
-      },
-      {
-        "number": 27,
-        "code": "DCC851",
-        "name": "TECC: Seminários Avançados em Grafos e Algoritmos",
-        "className": "PG2",
-        "workload": 30,
-        "credits": 2,
-        "type": "OP",
-        "scheduleText": "6a-13:00/14:40",
-        "teacher": "Prof. Guilherme Gomes",
-        "room": "DCC 2009",
-        "startDate": "14/08/2026",
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc851-pg2-27",
-        "meetings": [
-          {
-            "day": "SEX",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      },
-      {
-        "number": 28,
-        "code": "DCC865",
-        "name": "Projeto e Análise de Algoritmos",
-        "className": "PG",
-        "workload": 60,
-        "credits": 4,
-        "type": "OB",
-        "scheduleText": "2a e 4a-13:00/14:40",
-        "teacher": "Prof. Olga",
-        "room": "DCC 2013",
-        "startDate": null,
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc865-pg-28",
-        "meetings": [
-          {
-            "day": "SEG",
-            "start": "13:00",
-            "end": "14:40"
-          },
-          {
-            "day": "QUA",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      },
-      {
-        "number": 29,
-        "code": "DCC904",
-        "name": "Estágio em Docência I",
-        "className": "PG",
-        "workload": 30,
-        "credits": 2,
-        "type": "OB",
-        "scheduleText": null,
-        "teacher": "Prof. Erickson",
-        "room": null,
-        "startDate": null,
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc904-pg-29",
-        "meetings": []
-      },
-      {
-        "number": 30,
-        "code": "DCC905",
-        "name": "Estágio em Docência II",
-        "className": "PG",
-        "workload": 30,
-        "credits": 2,
-        "type": "OB",
-        "scheduleText": null,
-        "teacher": "Prof. Fabrício",
-        "room": null,
-        "startDate": null,
-        "isolated": "Não",
-        "language": "Português",
-        "id": "dcc905-pg-30",
-        "meetings": []
-      },
-      {
-        "number": 31,
-        "code": "DCC911",
-        "name": "Robótica Móvel",
-        "className": "PG",
-        "workload": 60,
-        "credits": 4,
-        "type": "OP",
-        "scheduleText": "3a e 5a-13:00/14:40",
-        "teacher": "Prof. Douglas",
-        "room": "CAD 3-A407",
-        "startDate": "04/08/2026",
-        "isolated": "Sim",
-        "language": "Português",
-        "id": "dcc911-pg-31",
-        "meetings": [
-          {
-            "day": "TER",
-            "start": "13:00",
-            "end": "14:40"
-          },
-          {
-            "day": "QUI",
-            "start": "13:00",
-            "end": "14:40"
-          }
-        ]
-      }
+        {
+          "number": 1,
+          "code": "DCC831",
+          "name": "TECC: Aprendizado Profundo para Processamento de Linguagem Natural",
+          "className": "PG1",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-19:00/20:40",
+          "teacher": "Prof. Adriano Veloso",
+          "room": "DCC 2009",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-pg1-1",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "19:00",
+              "end": "20:40"
+            },
+            {
+              "day": "QUA",
+              "start": "19:00",
+              "end": "20:40"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "code": "DCC831",
+          "name": "TECC: Engenharia de Software Experimental",
+          "className": "PG2",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-17:00/18:40",
+          "teacher": "Prof. Eduardo Figueiredo",
+          "room": "DCC 2009",
+          "startDate": "03/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-pg2-2",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUA",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "code": "DCC831",
+          "name": "TECC: Engenharia de Software para Sistemas Inteligentes",
+          "className": "PG3",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-14:55/16:35",
+          "teacher": "Prof. João Eduardo",
+          "room": "DCC 2013",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-pg3-3",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUA",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "code": "DCC831",
+          "name": "TECC: Seminários Avançados em Processamento de Linguagem Natural e Computação Social",
+          "className": "PG4",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-14:55/16:35",
+          "teacher": "Prof. Jussara",
+          "room": "DCC 2015",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-pg4-4",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUA",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "code": "DCC831",
+          "name": "TECC: Inteligência Artificial: Caracterização e Medição",
+          "className": "PG5",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-14:55/16:35",
+          "teacher": "Prof. Wagner",
+          "room": "DCC 2013",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-pg5-5",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUI",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "code": "DCC831",
+          "name": "TECC: Bancos de Dados Geográficos e Ciência de Dados Geoespaciais",
+          "className": "PG6",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-13:00/14:40",
+          "teacher": "Prof. Clodoveu",
+          "room": "CAD 3-A406",
+          "startDate": "04/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-pg6-6",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "13:00",
+              "end": "14:40"
+            },
+            {
+              "day": "QUI",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "code": "DCC831",
+          "name": "TECC: Teste de Software",
+          "className": "PG7",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-19:00/20:40",
+          "teacher": "Prof. André Hora",
+          "room": "CAD 3-A312",
+          "startDate": "04/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-pg7-7",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "19:00",
+              "end": "20:40"
+            },
+            {
+              "day": "QUI",
+              "start": "19:00",
+              "end": "20:40"
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "code": "DCC831",
+          "name": "TECC: Otimização Linear Robusta",
+          "className": "PG8",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-13:00/14:40",
+          "teacher": "Prof. Márcio Costa",
+          "room": "CAD 3-A211",
+          "startDate": "11/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-pg8-8",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "13:00",
+              "end": "14:40"
+            },
+            {
+              "day": "QUI",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "code": "DCC831",
+          "name": "TECC: Grandes Modelos de Linguagem",
+          "className": "PG9",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-14:55/16:35",
+          "teacher": "Prof. Anisio",
+          "room": "CAD 3-A313",
+          "startDate": "10/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-pg9-9",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUA",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "code": "DCC831",
+          "name": "TECC: Theory and Practice of SMT Solving",
+          "className": "P12",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-17:00/18:40",
+          "teacher": "Prof. Haniel",
+          "room": "CAD 3-A211",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-p12-10",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUA",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "code": "DCC831",
+          "name": "TECC: Criptografia-teoria e aplicações",
+          "className": "P13",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-19:00/20:40",
+          "teacher": "Prof. Jeroen",
+          "room": "CAD 3-A211",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Inglês",
+          "id": "dcc831-p13-11",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "19:00",
+              "end": "20:40"
+            },
+            {
+              "day": "QUA",
+              "start": "19:00",
+              "end": "20:40"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "code": "DCC831",
+          "name": "TECC: IA Generativa para Música",
+          "className": "P14",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-17:00/18:40",
+          "teacher": "Prof. Lucas Ferreira",
+          "room": "CAD 3-A313",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p14-12",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUI",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "code": "DCC831",
+          "name": "TECC: Aprendizado por Reforço",
+          "className": "P15",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-17:00/18:40",
+          "teacher": "Prof. Luiz Chaimowicz",
+          "room": "CAD 3-A213",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p15-13",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUI",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "code": "DCC831",
+          "name": "TES: Manutenção e Evolução de Software",
+          "className": "P16",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-17:00/18:40",
+          "teacher": "Prof. Marco Túlio",
+          "room": "CAD 3-A212",
+          "startDate": null,
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-p16-14",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUA",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "code": "DCC831",
+          "name": "TECC: Sistemas Operacionais Avançados",
+          "className": "P17",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-14:55/16:35",
+          "teacher": "Prof. Marcos Augusto Menezes",
+          "room": "CAD 3-Aud. B 3001",
+          "startDate": "11/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-p17-15",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUI",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "code": "DCC831",
+          "name": "TECC: Quantitative Information Flow",
+          "className": "P18",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-14:55/16:35",
+          "teacher": "Prof. Mário Sérgio",
+          "room": "CAD 3-A310",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Inglês",
+          "id": "dcc831-p18-16",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUA",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "code": "DCC831",
+          "name": "TECC: Nanocomputação e Nanotecnologia Computacional",
+          "className": "P19",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-17:00/18:40",
+          "teacher": "Prof. Omar",
+          "room": "CAD 3-A410",
+          "startDate": "03/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p19-17",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUA",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "code": "DCC831",
+          "name": "TECC: Cibersegurança",
+          "className": "P20",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-19:00/20:40",
+          "teacher": "Prof. Michele Nogueira",
+          "room": "ICEX 2013",
+          "startDate": "04/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p20-18",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "19:00",
+              "end": "20:40"
+            },
+            {
+              "day": "QUI",
+              "start": "19:00",
+              "end": "20:40"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "code": "DCC831",
+          "name": "TECC: Computação Natural",
+          "className": "P21",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-17:00/18:40",
+          "teacher": "Prof. Gisele",
+          "room": "CAD 3-A312",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p21-19",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "17:00",
+              "end": "18:40"
+            },
+            {
+              "day": "QUI",
+              "start": "17:00",
+              "end": "18:40"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "code": "DCC831",
+          "name": "TECC: Heuristicas e Metaheurísticas",
+          "className": "P22",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-14:55/16:35",
+          "teacher": "Prof. Thiago Noronha",
+          "room": "CAD 3-A312",
+          "startDate": "11/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-p22-20",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUI",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 21,
+          "code": "DCC831",
+          "name": "TECC: Programação e Arquitetura de Computadores Paralelos",
+          "className": "P23",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "2a e 4a-14:55/16:35",
+          "teacher": "Prof. George",
+          "room": "CAD 3-A406",
+          "startDate": "10/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc831-p23-21",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUA",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "code": "DCC831",
+          "name": "TECC: Teoria dos Grafos",
+          "className": "P24",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-13:00/14:40",
+          "teacher": "Prof. Gabriel Coutinho",
+          "room": "CAD 3-A311",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p24-22",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "13:00",
+              "end": "14:40"
+            },
+            {
+              "day": "QUI",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "code": "DCC831",
+          "name": "TECC: Projeto de Sistemas Robóticos",
+          "className": "P25",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-19:00/20:40",
+          "teacher": "Prof. Paulo Rezeck",
+          "room": "CAD 3-A410",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc831-p25-23",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "19:00",
+              "end": "20:40"
+            },
+            {
+              "day": "QUI",
+              "start": "19:00",
+              "end": "20:40"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "code": "DCC850",
+          "name": "TECC: Seminários Avançados de Pós-Graduação I",
+          "className": "PG1",
+          "workload": 15,
+          "credits": 1,
+          "type": "OB",
+          "scheduleText": "6a-10:00/12:40",
+          "teacher": "Prof. Pedro",
+          "room": "2077",
+          "startDate": "05/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc850-pg1-24",
+          "meetings": [
+            {
+              "day": "SEX",
+              "start": "10:00",
+              "end": "12:40"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "code": "DCC850",
+          "name": "TECC: Seminários Avançados de Pós-Graduação II",
+          "className": "PG2",
+          "workload": 15,
+          "credits": 1,
+          "type": "OB",
+          "scheduleText": "6a-10:00/12:40",
+          "teacher": "Prof. Fabrício",
+          "room": "2077",
+          "startDate": "05/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc850-pg2-25",
+          "meetings": [
+            {
+              "day": "SEX",
+              "start": "10:00",
+              "end": "12:40"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "code": "DCC851",
+          "name": "TECC: Modelos Generativos para Imagens",
+          "className": "PG1",
+          "workload": 30,
+          "credits": 2,
+          "type": "OP",
+          "scheduleText": "3a e 5a-14:55/16:35",
+          "teacher": "Prof. Erickson",
+          "room": "DCC 2014",
+          "startDate": "11/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc851-pg1-26",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "14:55",
+              "end": "16:35"
+            },
+            {
+              "day": "QUI",
+              "start": "14:55",
+              "end": "16:35"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "code": "DCC851",
+          "name": "TECC: Seminários Avançados em Grafos e Algoritmos",
+          "className": "PG2",
+          "workload": 30,
+          "credits": 2,
+          "type": "OP",
+          "scheduleText": "6a-13:00/14:40",
+          "teacher": "Prof. Guilherme Gomes",
+          "room": "DCC 2009",
+          "startDate": "14/08/2026",
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc851-pg2-27",
+          "meetings": [
+            {
+              "day": "SEX",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "code": "DCC865",
+          "name": "Projeto e Análise de Algoritmos",
+          "className": "PG",
+          "workload": 60,
+          "credits": 4,
+          "type": "OB",
+          "scheduleText": "2a e 4a-13:00/14:40",
+          "teacher": "Prof. Olga",
+          "room": "DCC 2013",
+          "startDate": null,
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc865-pg-28",
+          "meetings": [
+            {
+              "day": "SEG",
+              "start": "13:00",
+              "end": "14:40"
+            },
+            {
+              "day": "QUA",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "code": "DCC904",
+          "name": "Estágio em Docência I",
+          "className": "PG",
+          "workload": 30,
+          "credits": 2,
+          "type": "OB",
+          "scheduleText": null,
+          "teacher": "Prof. Erickson",
+          "room": null,
+          "startDate": null,
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc904-pg-29",
+          "meetings": []
+        },
+        {
+          "number": 30,
+          "code": "DCC905",
+          "name": "Estágio em Docência II",
+          "className": "PG",
+          "workload": 30,
+          "credits": 2,
+          "type": "OB",
+          "scheduleText": null,
+          "teacher": "Prof. Fabrício",
+          "room": null,
+          "startDate": null,
+          "isolated": "Não",
+          "language": "Português",
+          "id": "dcc905-pg-30",
+          "meetings": []
+        },
+        {
+          "number": 31,
+          "code": "DCC911",
+          "name": "Robótica Móvel",
+          "className": "PG",
+          "workload": 60,
+          "credits": 4,
+          "type": "OP",
+          "scheduleText": "3a e 5a-13:00/14:40",
+          "teacher": "Prof. Douglas",
+          "room": "CAD 3-A407",
+          "startDate": "04/08/2026",
+          "isolated": "Sim",
+          "language": "Português",
+          "id": "dcc911-pg-31",
+          "meetings": [
+            {
+              "day": "TER",
+              "start": "13:00",
+              "end": "14:40"
+            },
+            {
+              "day": "QUI",
+              "start": "13:00",
+              "end": "14:40"
+            }
+          ]
+        }
     ]
   }
 };

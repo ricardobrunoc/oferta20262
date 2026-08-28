@@ -63,7 +63,8 @@ const TRANSLATIONS = {
     yes: "Sim",
     no: "Não",
     clear: "Limpar filtros",
-    print: "Imprimir / salvar PDF",
+    print: "Baixar PDF",
+    exportPDF: "Baixar como PDF",
     exportImage: "Baixar como Imagem",
     exportJSON: "Baixar como JSON",
     importJSON: "Importar JSON",
@@ -121,7 +122,8 @@ const TRANSLATIONS = {
     yes: "Yes",
     no: "No",
     clear: "Clear filters",
-    print: "Print / save PDF",
+    print: "Download PDF",
+    exportPDF: "Download as PDF",
     exportImage: "Download as Image",
     exportJSON: "Download as JSON",
     importJSON: "Import JSON",
@@ -547,6 +549,8 @@ function applyStaticTranslations() {
   const heroSubtitle = document.getElementById("heroSubtitle");
   const heroPrintButton = document.getElementById("heroPrintButton");
   const heroClearButton = document.getElementById("heroClearButton");
+  const exportImageButton = document.getElementById("exportImageButton");
+  const exportPdfButton = document.getElementById("exportPdfButton");
   const languageButton = document.getElementById("languageToggleButton");
   const themeButton = document.getElementById("themeToggleButton");
   const scheduleTitle = document.getElementById("scheduleTitle");
@@ -589,6 +593,14 @@ function applyStaticTranslations() {
   if (heroClearButton) {
     heroClearButton.textContent = locale.clear;
     heroClearButton.setAttribute("aria-label", locale.clear);
+  }
+  if (exportImageButton) {
+    exportImageButton.title = locale.exportImage;
+    exportImageButton.setAttribute("aria-label", locale.exportImage);
+  }
+  if (exportPdfButton) {
+    exportPdfButton.title = locale.exportPDF;
+    exportPdfButton.setAttribute("aria-label", locale.exportPDF);
   }
   if (languageButton) {
     languageButton.setAttribute("title", currentLanguage === "pt" ? "Switch language" : "Alternar idioma");
@@ -661,7 +673,7 @@ function openModal(course) {
     </div>
     <div class="modal-actions">
       <button class="toolbar-btn" type="button" onclick="toggleCourseSelection(state.selectedCourse)">${isSelected ? t().selected : t().select}</button>
-      <button class="toolbar-btn" type="button" onclick="openGoogleCalendarForCourse(state.selectedCourse)">${t().addToGoogleCalendar}</button>
+      <button class="toolbar-btn" type="button" onclick="openGoogleCalendarForCourse(state.selectedCourse)">${t().googleCalendar}</button>
     </div>
   `;
 
@@ -1027,32 +1039,268 @@ function exportAsJSON() {
   URL.revokeObjectURL(url);
 }
 
-async function exportAsImage() {
+function getExportFileName(extension) {
+  const semester = state.selectedSemester ? `-${state.selectedSemester}` : "";
+  return `grade-horarios${semester}-${new Date().toISOString().split("T")[0]}.${extension}`;
+}
+
+async function captureSchedule() {
+  const schedule = document.querySelector(".schedule-card");
   const grid = document.getElementById("scheduleGrid");
-  if (!grid) return;
+  if (!schedule || !grid) throw new Error("Grade de horários não encontrada.");
+  if (typeof html2canvas === "undefined") throw new Error("html2canvas não está disponível.");
+
+  // Clone removes viewport scrolling constraints without changing visible page.
+  const exportWidth = Math.max(1100, grid.scrollWidth + 48);
+  const snapshot = schedule.cloneNode(true);
+  snapshot.classList.add("schedule-card--export");
+  snapshot.style.width = `${exportWidth}px`;
+  document.body.appendChild(snapshot);
 
   try {
-    // Use html2canvas if available, otherwise use a simple fallback
-    if (typeof html2canvas !== "undefined") {
-      const canvas = await html2canvas(grid, {
-        backgroundColor: state.theme === "dark" ? "#1a1b1e" : "#ffffff",
-        scale: 2,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-      });
+    return await html2canvas(snapshot, {
+      backgroundColor: state.theme === "dark" ? "#1a1b1e" : "#ffffff",
+      scale: Math.max(2, Math.min(3, window.devicePixelRatio || 1)),
+      useCORS: true,
+      allowTaint: false,
+      logging: false,
+      width: snapshot.scrollWidth,
+      height: snapshot.scrollHeight,
+      windowWidth: exportWidth,
+      windowHeight: snapshot.scrollHeight,
+      scrollX: 0,
+      scrollY: 0,
+    });
+  } finally {
+    snapshot.remove();
+  }
+}
 
-      const link = document.createElement("a");
-      link.href = canvas.toDataURL("image/png");
-      link.download = `grade-horarios-${new Date().toISOString().split("T")[0]}.png`;
-      link.click();
-    } else {
-      alert("Para exportar como imagem, adicione a biblioteca html2canvas ao projeto.");
-    }
+async function exportAsImage() {
+  try {
+    const canvas = await captureSchedule();
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = getExportFileName("png");
+    link.click();
   } catch (error) {
     console.error("Erro ao exportar imagem:", error);
     alert("Erro ao exportar imagem. Tente novamente.");
   }
+}
+
+async function exportAsPDF() {
+  try {
+    if (!window.jspdf?.jsPDF) throw new Error("jsPDF não está disponível.");
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a3", compress: true });
+    const courses = getFilteredCourses();
+
+    drawPdfSchedulePage(pdf, DAYS, courses);
+    drawPdfCourseList(pdf, courses);
+    pdf.save(getExportFileName("pdf"));
+  } catch (error) {
+    console.error("Erro ao exportar PDF:", error);
+    alert("Erro ao exportar PDF. Tente novamente.");
+  }
+}
+
+function drawPdfHeader(pdf, title, subtitle) {
+  pdf.setFillColor(15, 93, 155);
+  pdf.rect(0, 0, pdf.internal.pageSize.getWidth(), 20, "F");
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(15);
+  pdf.text(title, 10, 9);
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(8.5);
+  pdf.text(subtitle, 10, 15);
+  pdf.setTextColor(25, 28, 36);
+}
+
+function drawPdfSchedulePage(pdf, days, courses) {
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const margin = 8;
+  const top = 26;
+  const headerHeight = 14;
+  const bottom = 8;
+  const timeWidth = 30;
+  const dayWidth = (pageWidth - margin * 2 - timeWidth) / days.length;
+  const availableRowsHeight = pdf.internal.pageSize.getHeight() - top - headerHeight - bottom;
+  const semester = state.selectedSemester || "";
+  const slotDensities = DISPLAY_SLOTS.map((slot) => Math.max(
+    1,
+    ...days.map((day) => coursesForCell(courses, day.key, slot).length),
+  ));
+  const minimumRowHeight = 31;
+  const flexibleHeight = Math.max(0, availableRowsHeight - minimumRowHeight * DISPLAY_SLOTS.length);
+  const totalDensity = slotDensities.reduce((total, density) => total + density, 0);
+  const rowHeights = slotDensities.map((density) => minimumRowHeight + flexibleHeight * density / totalDensity);
+
+  drawPdfHeader(
+    pdf,
+    `${t().schedule} ${semester}`.trim(),
+    `${courses.length} ${t().disciplines} · ${state.language === "pt" ? "Semana completa" : "Full week"}`,
+  );
+
+  pdf.setDrawColor(190, 196, 208);
+  pdf.setLineWidth(0.25);
+  pdf.setFillColor(15, 93, 155);
+  pdf.rect(margin, top, timeWidth, headerHeight, "FD");
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(10);
+  pdf.text(t().schedule_label.toUpperCase(), margin + timeWidth / 2, top + 8.7, { align: "center" });
+
+  days.forEach((day, dayIndex) => {
+    const x = margin + timeWidth + dayIndex * dayWidth;
+    pdf.setFillColor(15, 93, 155);
+    pdf.setDrawColor(190, 196, 208);
+    pdf.rect(x, top, dayWidth, headerHeight, "FD");
+    pdf.setTextColor(255, 255, 255);
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(12);
+    pdf.text(getPdfDayLabel(day).toUpperCase(), x + dayWidth / 2, top + 8.7, { align: "center" });
+  });
+
+  DISPLAY_SLOTS.forEach((slot, slotIndex) => {
+    const rowHeight = rowHeights[slotIndex];
+    const previousRowsHeight = rowHeights.slice(0, slotIndex).reduce((total, height) => total + height, 0);
+    const y = top + headerHeight + previousRowsHeight;
+    pdf.setFillColor(238, 241, 247);
+    pdf.setTextColor(25, 28, 36);
+    pdf.rect(margin, y, timeWidth, rowHeight, "FD");
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(8.5);
+    pdf.text(`${slot.start}\n${slot.end}`, margin + timeWidth / 2, y + rowHeight / 2 - 1.5, {
+      align: "center",
+      baseline: "middle",
+    });
+
+    days.forEach((day, dayIndex) => {
+      const x = margin + timeWidth + dayIndex * dayWidth;
+      const items = coursesForCell(courses, day.key, slot);
+      pdf.setFillColor(255, 255, 255);
+      pdf.rect(x, y, dayWidth, rowHeight, "FD");
+
+      if (items.length === 0) {
+        pdf.setTextColor(130, 136, 148);
+        pdf.setFont("helvetica", "normal");
+        pdf.setFontSize(8);
+        pdf.text(t().free, x + dayWidth / 2, y + rowHeight / 2, { align: "center" });
+        return;
+      }
+
+      const gap = 1.2;
+      const itemHeight = (rowHeight - gap * (items.length + 1)) / items.length;
+      items.forEach((course, itemIndex) => {
+        const itemY = y + gap + itemIndex * (itemHeight + gap);
+        drawPdfScheduleCourse(pdf, course, x + 1.5, itemY, dayWidth - 3, itemHeight);
+      });
+    });
+  });
+}
+
+function getPdfDayLabel(day) {
+  if (state.language !== "pt") return day.labelEn;
+  const labels = {
+    SEG: "Segunda-feira",
+    TER: "Terça-feira",
+    QUA: "Quarta-feira",
+    QUI: "Quinta-feira",
+    SEX: "Sexta-feira",
+  };
+  return labels[day.key] || day.label;
+}
+
+function drawPdfScheduleCourse(pdf, course, x, y, width, height) {
+  const compact = height < 13;
+  const accent = course.type === "OP" ? [22, 116, 76] : [15, 93, 155];
+  const titleSize = compact ? 6.2 : 8;
+  const metaSize = compact ? 5.6 : 7;
+  const lineHeight = compact ? 2.15 : 3;
+  const innerX = x + 3.2;
+  const textWidth = width - 5;
+  const maxTitleLines = compact ? 1 : 2;
+  const titleLines = pdf.splitTextToSize(shortName(course.name), textWidth).slice(0, maxTitleLines);
+
+  pdf.setFillColor(248, 249, 252);
+  pdf.setDrawColor(205, 210, 220);
+  pdf.roundedRect(x, y, width, height, 1.5, 1.5, "FD");
+  pdf.setFillColor(...accent);
+  pdf.roundedRect(x, y, 1.8, height, 0.8, 0.8, "F");
+
+  pdf.setTextColor(25, 28, 36);
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(titleSize);
+  pdf.text(titleLines, innerX, y + lineHeight + 0.7);
+
+  let cursorY = y + titleLines.length * lineHeight + lineHeight + 0.7;
+  pdf.setFontSize(metaSize);
+  pdf.text(`${course.code} · ${course.className} · ${course.room || t().notInformedRoom}`, innerX, cursorY);
+  cursorY += lineHeight;
+
+  if (cursorY < y + height - 0.8) {
+    pdf.setFont("helvetica", "normal");
+    const teacher = pdf.splitTextToSize(course.teacher || t().notInformed, textWidth)[0];
+    pdf.text(teacher, innerX, cursorY);
+  }
+}
+
+function drawPdfCourseList(pdf, courses) {
+  const margin = 12;
+  const bottom = 12;
+  let y = 29;
+
+  const addListPage = () => {
+    pdf.addPage("a4", "portrait");
+    drawPdfHeader(
+      pdf,
+      `${t().list} ${state.selectedSemester || ""}`.trim(),
+      `${courses.length} ${t().disciplines}`,
+    );
+    y = 29;
+  };
+
+  addListPage();
+  if (courses.length === 0) {
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(10);
+    pdf.text(t().noResults, margin, y);
+    return;
+  }
+
+  courses.forEach((course) => {
+    const contentWidth = pdf.internal.pageSize.getWidth() - margin * 2 - 6;
+    const title = `${course.number}. ${course.name}`;
+    const titleLines = pdf.splitTextToSize(title, contentWidth);
+    const detailLines = [
+      `${t().code_label}: ${course.code} · ${course.className}    ${t().schedule_label}: ${course.scheduleText || t().notInformed}`,
+      `${t().teacher_label}: ${course.teacher || t().notInformed}`,
+      `${t().room_label}: ${course.room || t().notInformedRoom}    ${t().workload_label}: ${course.workload ?? t().notInformed} h · ${course.credits ?? t().notInformed}`,
+      `${t().type}: ${course.type || t().notInformed}    ${t().isolated_label}: ${course.isolated || t().notInformed}    ${t().language_label}: ${course.language || t().notInformed}`,
+      `${state.language === "pt" ? "Início das aulas" : "Classes start"}: ${course.startDate || t().notInformed}`,
+    ].flatMap((line) => pdf.splitTextToSize(line, contentWidth));
+    const cardHeight = 7 + titleLines.length * 4.2 + detailLines.length * 3.7;
+
+    if (y + cardHeight > pdf.internal.pageSize.getHeight() - bottom) addListPage();
+
+    pdf.setFillColor(247, 248, 251);
+    pdf.setDrawColor(210, 214, 224);
+    pdf.roundedRect(margin, y - 4, pdf.internal.pageSize.getWidth() - margin * 2, cardHeight, 1.5, 1.5, "FD");
+    pdf.setTextColor(25, 28, 36);
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(10);
+    pdf.text(titleLines, margin + 3, y + 1);
+    let detailY = y + 2 + titleLines.length * 4.2;
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(8.2);
+    detailLines.forEach((line) => {
+      pdf.text(line, margin + 3, detailY);
+      detailY += 3.7;
+    });
+    y += cardHeight + 3;
+  });
 }
 
 function importJSON() {

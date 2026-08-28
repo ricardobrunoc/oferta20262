@@ -7,7 +7,7 @@
     "workload": 60,
     "credits": 4,
     "type": "OP",
-    "scheduleText": "3a e 5a-17:00/18:40",
+    "scheduleText": "2a e 4a-19:00/20:40",
     "teacher": "Prof. Adriano Veloso",
     "room": "DCC 2009",
     "startDate": "11/08/2026",
@@ -16,14 +16,14 @@
     "id": "dcc831-pg1-1",
     "meetings": [
       {
-        "day": "TER",
-        "start": "17:00",
-        "end": "18:40"
+        "day": "SEG",
+        "start": "19:00",
+        "end": "20:40"
       },
       {
-        "day": "QUI",
-        "start": "17:00",
-        "end": "18:40"
+        "day": "QUA",
+        "start": "19:00",
+        "end": "20:40"
       }
     ]
   },

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grade de Horários - PPGCC UFMG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,8 +18,8 @@
       <h1 id="heroTitle">Grade de Horários <span id="semesterTitle">2026-2</span></h1>
       <p id="heroSubtitle" class="subtitle">Visualização interativa da oferta atualizada de disciplinas do PPGCC</p>
       <div class="hero__actions">
-        <button id="heroPrintButton" class="btn btn--light" onclick="window.print()" aria-label="Imprimir ou salvar a grade em PDF">
-          Imprimir / salvar PDF
+        <button id="heroPrintButton" class="btn btn--light" onclick="exportAsPDF()" aria-label="Baixar a grade em PDF">
+          Baixar PDF
         </button>
         <button id="heroClearButton" class="btn btn--ghost" onclick="clearFilters()" aria-label="Limpar filtros aplicados">
           Limpar filtros
@@ -90,8 +91,11 @@
         <button class="toolbar-btn" onclick="exportAsJSON()" title="Baixar como JSON" aria-label="Exportar lista em JSON">
           ⬇️ JSON
         </button>
-        <button class="toolbar-btn" onclick="exportAsImage()" title="Baixar como Imagem" aria-label="Exportar grade como imagem">
+        <button id="exportImageButton" class="toolbar-btn" onclick="exportAsImage()" title="Baixar como Imagem" aria-label="Exportar grade como imagem">
           ⬇️ Imagem
+        </button>
+        <button id="exportPdfButton" class="toolbar-btn" onclick="exportAsPDF()" title="Baixar como PDF" aria-label="Exportar grade como PDF">
+          ⬇️ PDF
         </button>
         <button class="toolbar-btn" onclick="importJSON()" title="Importar JSON" aria-label="Importar lista em JSON">
           ⬆️ JSON
@@ -165,6 +169,7 @@
   <input type="file" id="fileInput" accept=".json" style="display: none;" />
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
   <script src="semester-data.js"></script>
   <script src="script.js"></script>
 </body>
